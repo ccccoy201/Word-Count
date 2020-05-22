@@ -3,27 +3,27 @@
 #include<stdlib.h>
 int main()
 {
- int x,y;
- x=0,y=0;
+ int c=0,count=0;
  int i=0;
  FILE *f;
- char s[1024];
+ char s[100];
  f=fopen("E:\\1\\2.txt","r");
  if(f==NULL)
-  return -1;
+	printf("Open the file failure...\n");
  while(fscanf(f,"%c",&s[i])!=EOF)
-  i++;
- printf("输入文件内容:\n");
- for(x=0;x<i;x++)
-  printf("%c",s[x]);
+	i++;
+ printf("txt文件内容:\n");
+ for(c=0;c<i;c++)
+	printf("%c",s[c]);
  for(int j=0;j<i;j++)
  {
-  if(s[j]==','||s[j]=='#'||s[j]=='*'||s[j]==' ')
-   y++;
+	if(s[j]==','||s[j]=='#'||s[j]=='*'||s[j]==' ')
+	count++;
  }
  printf("\n");
- printf("字符个数:%d\n",x);
- printf("单词个数:%d\n",y+1);
+ printf("字符个数:%d\n",c);
+ printf("单词个数:%d\n",count+1);
  fclose(f);
  return 0;
 }
+
